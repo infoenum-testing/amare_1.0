@@ -29,6 +29,7 @@ public class CustomPagerAdapter extends PagerAdapter {
         this.imageList = imageList;
         mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+    
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {

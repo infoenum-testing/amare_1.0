@@ -307,7 +307,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Purchase
     private void initialize() {
         mContext = this;
         mActivity = BaseActivity.this;
-        sp = new SharedPreference(mActivity);
+        sp = new SharedPreference(this);
         if (!WebSocketService.getInstance().isIs_opened() && sp.isloggedIn().equalsIgnoreCase("true") && isNetworkConnected()) {
             WebSocketService.getInstance().connectWebSocket(getApplicationContext(), true);
         }
@@ -316,11 +316,16 @@ public abstract class BaseActivity extends AppCompatActivity implements Purchase
 
     protected void initializeBillingClient() {
         Log.e(TAG, "initializeBillingClient: ");
+        if (sp==null){
+            sp = new SharedPreference(this);
+        }
         if (client == null && isNetworkConnected() && sp.isloggedIn().equalsIgnoreCase("True")) {
             Log.e(TAG, "initializeBillingClient: client == null");
-
             Log.e(TAG, "initialize: client is Null");
-            client = BillingClient.newBuilder(mContext).enablePendingPurchases().setListener(this).build();
+            client = BillingClient.newBuilder(this)
+                    .enablePendingPurchases()
+                    .setListener(this)
+                    .build();
             client.startConnection(new BillingClientStateListener() {
                 @Override
                 public void onBillingServiceDisconnected() {
@@ -330,7 +335,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Purchase
 
                 @Override
                 public void onBillingSetupFinished(@NonNull BillingResult billingResult) {
-                    Log.e(TAG, "onBillingSetupFinished: ");
+                    Log.e(TAG, "onBillingSetupFinished:");
                     if (CommonDialogs.vipTokenPriceList.size() == 0 || CommonDialogs.timeTokenPriceList.size() == 0 || CommonDialogs.crushTokenPriceList.size() == 0 || CommonDialogs.PremiumPriceList.size() == 0)
                         CommonDialogs.onBillingInitialized(client);
                 }

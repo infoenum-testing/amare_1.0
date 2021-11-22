@@ -61,7 +61,6 @@ public class PhoneActivity extends BaseActivity implements TextWatcher, CountryC
         btn_continue.setOnClickListener(this::onClick);
         img_cross.setOnClickListener(this::onClick);
         et_phone.addTextChangedListener(this);
-
         c_code = cc_picker.getDefaultCountryCode();
     }
 
@@ -111,7 +110,6 @@ public class PhoneActivity extends BaseActivity implements TextWatcher, CountryC
     @Override
     public void onCountrySelected() {
         Log.d(TAG, "onCountrySelected: " + cc_picker.getSelectedCountryCode());
-
         c_code = cc_picker.getSelectedCountryCode();
     }
 

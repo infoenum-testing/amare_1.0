@@ -21,14 +21,13 @@ public class CallServer {
 
     //Dev
     //public static final String BaseImage = "http://dev.swiftdatingapp.com/";  //for Dev
-
     //Staging
     //public static final String BaseImage = "http://staging.swiftdatingapp.com/"; // for stag
 
     public static final String BASE_URL = (BuildConfig.SERVER_URL+"api/");
 
     // Web Socket Url for Chat
-    public static final String SocketUrl = "ws://50.17.231.64:8443";
+    public static final String SocketUrl = "ws://52.54.232.96:8443";
     //                                      ws://50.17.231.64:8443 //for production
 //    public static final String SocketUrl = "ws://50.17.231.64:8443";  //for staging
 

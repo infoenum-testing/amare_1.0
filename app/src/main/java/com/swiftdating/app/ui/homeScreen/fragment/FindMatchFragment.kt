@@ -542,7 +542,7 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
                             SharedPreference(context).saveSelfieVerificationStatus("No")
                         }*/
                         else if (resource.data.error != null && resource.data.error.code == "404") {
-                            // baseActivity.hideLoading()
+                             baseActivity.hideLoading()
                             img_vip_star?.isEnabled = false
                             chat?.isEnabled = false
                             rlFilter?.isEnabled = false
@@ -563,7 +563,7 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
                             //SharedPreference(context).saveSelfieVerificationStatus("Yes")
                         }
                     } else {
-                        //   baseActivity.hideLoading()
+                           baseActivity.hideLoading()
                         baseActivity.sp.saveisSettingsChanged(false)
                         img_vip_star?.isEnabled = false
                         chat?.isEnabled = false

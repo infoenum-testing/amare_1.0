@@ -85,7 +85,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentText(messageBody)
                 .setContentIntent(intent)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(messageBody))
-                .setSmallIcon(R.drawable.ic_round_icon_logo)
+                .setSmallIcon(R.mipmap.app_icon)
                 .setLargeIcon(bitmap)
                 .setAutoCancel(true)
                 .setTicker(messageBody)
@@ -100,9 +100,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (mNotificationManager != null) {
             mNotificationManager.notify(notificationId, notification);
         }
-
     }
-
     /**
      *  Method to set notification data
      * @return
