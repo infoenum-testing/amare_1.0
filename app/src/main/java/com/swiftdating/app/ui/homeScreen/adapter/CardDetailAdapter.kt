@@ -227,7 +227,6 @@ class CardDetailAdapter(
             holder.tvInterest.text = spot.profileOfUser.ambitions
         } else
             holder.cvInterest.visibility = GONE
-
         val layoutManager = FlexboxLayoutManager(context)
         layoutManager.flexDirection = FlexDirection.ROW
         layoutManager.flexWrap = FlexWrap.WRAP

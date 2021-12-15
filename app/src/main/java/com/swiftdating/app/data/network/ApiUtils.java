@@ -263,7 +263,6 @@ public interface ApiUtils {
     @GET("/api/matches/{id}")
     Call<ResponseBody> getUserListAll(@Header("Authorization") String header,
                                       @Path("id") String id);
-
     /* api to get New Matches List */
     @GET("/api/matches/newMatchList/{id}")
     Call<ResponseBody> getMatchList(@Header("Authorization") String header,

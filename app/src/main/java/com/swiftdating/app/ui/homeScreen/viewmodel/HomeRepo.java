@@ -143,10 +143,8 @@ public class HomeRepo {
         CallServer.get().getAPIName().matchReact(sp.getToken(), obj).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-
                 try {
                     Gson gson = new GsonBuilder().setLenient().create();
-
                     if (response.code() == 200) {
                         ReactResponseModel responseBean = gson.fromJson(response.body().string(), ReactResponseModel.class);
                         data.setValue(Resource.success(responseBean));

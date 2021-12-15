@@ -111,7 +111,6 @@ public class HomeActivity extends BaseActivity implements TabLayout.BaseOnTabSel
      */
     private void subscribeModel() {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-
         homeViewModel.unreadResponse().observe(this, (Observer<? super Resource<BaseModel>>) new Observer<Resource<BaseModel>>() {
             @Override
             public void onChanged(@Nullable Resource<BaseModel> resource) {

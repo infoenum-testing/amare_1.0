@@ -51,13 +51,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.e("Notification Received", "Notification Received");
         setNotification(remoteMessage);
     }
-
     /**
      *  Method to send notification data on Notification Bar
      * @return
      */
     private void sendNotification(String title, String messageBody, NotificationModel match) {
-
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.app_icon);
         notificationIntent.putExtra("match", match);
 

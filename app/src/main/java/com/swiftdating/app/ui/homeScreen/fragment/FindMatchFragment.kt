@@ -147,8 +147,6 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
         super.onViewCreated(view, savedInstanceState)
         init(view)
         contextMy = this.context!!
-
-
         if (baseActivity.isNetworkConnected) {
             if (baseActivity.sp.isSettingsChanged || (activity as HomeActivity).cardList.isEmpty()) {
                 list = (activity as HomeActivity).cardList
@@ -632,8 +630,10 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
                             baseActivity.sp.isDialogOpen = true
                             CommonDialogs.CrushPurChaseDialog(context, this)
                             /*CommonDialogs.purchaseDialog(context, "Crush Tokens", "You have run out of crush tokens. " +"Purchase more tokens below.", this)*/
-                        } else if (resource.data.message.contains("REACHED TO 100", ignoreCase = true)) {
+                        } else if (resource.data.message.contains("SWIPECOUNTERS REACHED TO 100", ignoreCase = true)) {
                             isSwipedCalled = true
+                          //  CommonDialogs.CrushPurChaseDialog(context, this)
+                         //   CommonDialogs.PremuimPurChaseDialog(context, this)
                             /* if (resource.data.swipesData != null && resource.data.swipesData.updatedAt != null)
                              {
                                  val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
@@ -685,7 +685,6 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
                             baseActivity.showSnackbar(card_stack_view, resource.data.message)
                         }
                         rewind.isEnabled = true
-
                     }
                 }
                 Status.ERROR -> {
@@ -703,7 +702,6 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
                 }
             }
         })
-
         homeViewModel.userReactResponse1().observe(viewLifecycleOwner, Observer<Resource<ReactResponseModel>> { resource ->
             if (resource == null) {
                 return@Observer
@@ -1353,8 +1351,6 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
 
                     override fun onAdClicked() {
                         Log.e("onAdClicked", "onAdClicked")
-
-
                     }
 
                     override fun onAdImpression() {
@@ -1843,7 +1839,6 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
             homeViewModel.getUserListRequest((activity as HomeActivity).sp.token)
         }
     }
-
     var myHt = 0;
 
     /**
@@ -2348,7 +2343,6 @@ class FindMatchFragment : BaseFragment(), CardStackListener,
                 imageView.visibility = VISIBLE
                 homeViewModel.getUserListRequest(baseActivity.sp.token)
             }
-
         } else {
             if (baseActivity != null)
                 baseActivity.showSnackbar(like, filterRequestResponse?.message)

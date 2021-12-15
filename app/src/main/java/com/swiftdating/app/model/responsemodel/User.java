@@ -64,7 +64,6 @@ public class User {
     @Expose
     private String selfieVerificationStatus;
 
-
     public String getSelfieVerificationStatus() {
         return selfieVerificationStatus;
     }

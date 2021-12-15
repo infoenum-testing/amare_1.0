@@ -498,7 +498,7 @@ public class CommonUtils {
      */
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (cm != null) {
+        if(cm != null){
             NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
             return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
         }
@@ -521,7 +521,6 @@ public class CommonUtils {
         }
         return mBottomSheetDialog;
     }
-
     /*
      *** Method to set Bottom Sheet Behavior
      */
@@ -547,7 +546,7 @@ public class CommonUtils {
             Bitmap myBitmap = BitmapFactory.decodeStream(input);
             if (sizeType == 1)
                 myBitmap = Bitmap.createScaledBitmap(myBitmap, 100, 100, false);
-            Log.e("bitmap Size", myBitmap.getByteCount() + "");
+            Log.e("bitmap Size", myBitmap.getByteCount() +"");
             return myBitmap;
         } catch (IOException e) {
             e.printStackTrace();

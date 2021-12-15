@@ -755,7 +755,6 @@ public class CommonDialogs {
                 word.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(ctx.getResources(), R.color.grey_new, null)), 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 tv_restore.setText(word);
 
-
                 Spannable wordTwo = new SpannableString(" Restore Purchase.");
                 wordTwo.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(ctx.getResources(), R.color.red_start, null)), 0, wordTwo.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                 tv_restore.append(wordTwo);

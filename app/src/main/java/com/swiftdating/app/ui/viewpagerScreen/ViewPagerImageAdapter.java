@@ -1,6 +1,7 @@
 package com.swiftdating.app.ui.viewpagerScreen;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,7 @@ public class ViewPagerImageAdapter extends PagerAdapter {
         View itemView = mLayoutInflater.inflate(R.layout.pager_item, container, false);
 
         ZoomageView imageView =itemView.findViewById(R.id.imageView);
+        Log.e("viewPager", "instantiateItem: "+CallServer.BaseImage + list.get(position).getImageUrl() );
 //        CommonUtils.setImageUsingFresco(imageView, CallServer.BASEIMAGE + list.get(position).getImageUrl(),1);
         Glide.with(imageView).load(CallServer.BaseImage + list.get(position).getImageUrl()).into(imageView);
 

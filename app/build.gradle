@@ -36,8 +36,8 @@ android {
             versionNameSuffix "-dev"
             /*versionNameSuffix "-stagging"*/
             buildConfigField 'String', 'ENVIRONMENT', '"DEV"'
-           // buildConfigField "String", "SERVER_URL", '"https://staging.amaredatingapp.com/"'
-            buildConfigField "String", "SERVER_URL", '"https://prod.amaredatingapp.com/"'
+            buildConfigField "String", "SERVER_URL", '"https://staging.amaredatingapp.com/"'
+           // buildConfigField "String", "SERVER_URL", '"https://prod.amaredatingapp.com/"'
         }
         release {
             minifyEnabled true

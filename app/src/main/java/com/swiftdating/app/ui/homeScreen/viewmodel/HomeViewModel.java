@@ -127,7 +127,6 @@ public class HomeViewModel extends AndroidViewModel {
             }
         });
 
-
         userReactResponseLD = Transformations.switchMap(userReactRequest, new Function<ReactRequestModel, LiveData<Resource<ReactResponseModel>>>() {
             @Override
             public LiveData<Resource<ReactResponseModel>> apply(ReactRequestModel input) {

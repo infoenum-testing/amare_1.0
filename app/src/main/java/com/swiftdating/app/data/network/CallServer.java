@@ -17,12 +17,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CallServer {
 
     //Live
-    public static final String BaseImage = BuildConfig.SERVER_URL;//"https://prod.swiftdatingapp.com/";  //For live
+   // public static final String BaseImage = BuildConfig.SERVER_URL;//"https://prod.swiftdatingapp.com/";  //For live
 
     //Dev
     //public static final String BaseImage = "http://dev.swiftdatingapp.com/";  //for Dev
     //Staging
-    //public static final String BaseImage = "http://staging.swiftdatingapp.com/"; // for stag
+    public static final String BaseImage = "https://staging.amaredatingapp.com/"; // for stag
 
     public static final String BASE_URL = (BuildConfig.SERVER_URL+"api/");
 
@@ -36,8 +36,6 @@ public class CallServer {
  "ws://50.17.231.64:8443"      Development
  "ws://52.54.232.96:8443"       Production      Production
     * */
-
-
     //public static final String SocketUrl = "ws://54.234.31.215:8443"; //for dev
 
     //public static final String SocketUrl = "ws://23.21.208.109:8443";  //for 3staging

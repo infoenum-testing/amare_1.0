@@ -253,7 +253,6 @@ public class MatchFragment extends BaseFragment implements OnItemClickListenerTy
                                 getBaseActivity().openActivityOnTokenExpire();
                                 getBaseActivity().hideLoading();
                             }
-
                         } else {
                             if (getBaseActivity() != null)
                                 getBaseActivity().hideLoading();
